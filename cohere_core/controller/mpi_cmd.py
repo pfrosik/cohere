@@ -19,7 +19,7 @@ def run_with_mpi(lib, conf_file, datafile, dir, devices):
     command = ['mpiexec', '-n', str(len(devices)), 'python', script, lib, conf_file, datafile, dir, str(devices)]
     result = subprocess.run(command, stdout=subprocess.PIPE)
     run_time = time.time() - start_time
-    print('GA reconstruction took', run_time, 'seconds')
+    print('MPI reconstruction took', run_time, 'seconds')
 
 
 def main(arg):
